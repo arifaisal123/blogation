@@ -1,0 +1,29 @@
+<%- include("partials/header"); -%>
+
+<h1 class="color-blue">Home</h1>
+<p><%= homeContent %></p>
+
+<% for (let i=0; i<posts.length; i++) { %>
+    <div class="post-content">
+        <h2><a href="/posts/<%=posts[i].title%>"><%= posts[i].title %></a></h2>
+        <% if (posts[i].content.length > 100 ) { %>
+           <p><%= (posts[i].content.substring(0, 100) + "...") %><a href="/posts/<%=posts[i].title%>">Read More</a></p>
+           <p>POSTED ON <%= new Date(posts[i].date).toLocaleDateString('en-US', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          }) %></p>
+        <% } else { %>
+        <p><%= posts[i].content %></p>
+        <p>POSTED ON <%= new Date(posts[i].date).toLocaleDateString('en-US', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          }) %></p>
+        <% } %>
+    </div>
+<% } %>
+
+<%- include("partials/footer"); -%>

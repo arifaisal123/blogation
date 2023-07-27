@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+
+<h1><%= title %></h1>
+<p><%= content %></p>
+<p>POSTED ON <%= new Date(date).toLocaleDateString('en-US', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }) %></p>
+  <a href="/delete/<%=title%>"><button class="btn btn-primary">DELETE POST</button></a>
+
+<%- include("partials/footer"); -%>
