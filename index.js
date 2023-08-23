@@ -12,7 +12,7 @@ const contactContent = "We value your feedback and are eager to hear from you! O
 
 const app = express();
 
-app.set('views', path.join(__dirname, '..', 'views'));
+app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
