@@ -11,6 +11,7 @@ const contactContent = "We value your feedback and are eager to hear from you! O
 
 const app = express();
 
+app.set('views', __dirname + '/../views');
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
